@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cinthya Flores — Product Manager</title>
+<meta property="og:title" content="Cinthya Flores — Product Manager">
+<meta property="og:description" content="Product Manager in Vancouver. Product, project management, design and AI.">
+<meta property="og:image" content="https://cinthyaflores.com/assets/cinthya.webp">
+<meta name="description" content="Cinthya Flores, Product Manager in Vancouver. Product, project management, design and AI.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%23009473%27/%3E%3Ctext x=%2750%25%27 y=%2754%25%27 text-anchor=%27middle%27 dominant-baseline=%27middle%27 font-family=%27Arial,sans-serif%27 font-weight=%27900%27 font-size=%2738%27 fill=%27white%27%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --surface:#FFFFFF;
+    --ink:#17181A;
+    --ink-2:#3D4045;
+    --muted:#7A7D82;
+    --line:#E3EBE1;
+    --accent:#009473;
+    --accent-soft:#E2F3EB;
+    --sand:#EAF3D4;
+    --radius:20px;
+    --max:1120px;
+    --read:680px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Figtree',system-ui,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-weight:800;letter-spacing:-0.03em;line-height:1.08}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+  .read{max-width:var(--read);margin:0 auto;padding:0 32px}
+  .placeholder{}
+  .inline-link{color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .inline-link:hover{color:var(--ink)}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(8px)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-weight:900;font-size:22px;letter-spacing:-0.03em}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;gap:28px;font-size:16px;font-weight:600;color:var(--ink-2)}
+  .nav-links a:hover{color:var(--ink)}
+
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:12px 20px;border-radius:999px;border:1.5px solid var(--ink);transition:.15s}
+  .btn.primary{background:var(--ink);color:var(--bg)}
+  .btn:hover{transform:translateY(-1px)}
+
+  /* HERO */
+  .hero{padding:72px 0 80px}
+  .hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:center}
+  .hero h1{font-size:clamp(44px,6vw,72px);margin-bottom:24px}
+  .hero p{color:var(--ink-2);margin-bottom:16px;max-width:580px}
+  .hero p strong{color:var(--ink);font-weight:700}
+  .hero .ctas{display:flex;gap:12px;margin-top:28px}
+  .photo{aspect-ratio:4/5;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600;font-size:15px;text-align:center}
+
+  .section{padding:64px 0}
+  .section > .wrap > h2{font-size:clamp(32px,4vw,44px);margin-bottom:32px}
+
+  /* PROJECT BENTO */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);transition:transform .2s, box-shadow .2s;min-height:380px}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(23,24,26,.25)}
+  .card.wide{grid-column:span 2}
+  .card.full{grid-column:1/-1}
+  .card-top{padding:28px 28px 0}
+  .card-top h3{font-size:clamp(22px,2.3vw,30px)}
+  .card-visual{flex:1;margin-top:24px;min-height:180px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+  .card-foot{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-top:1px solid var(--line);font-size:14px}
+  .card-foot b{display:block;font-weight:700}
+  .card-foot small{color:var(--muted);font-size:13px}
+  .pill{font-size:12px;font-weight:800;letter-spacing:.1em;padding:6px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+  .tint-olive{background:var(--accent-soft)}
+  .tint-ink{background:#009473;color:var(--bg);border-color:#009473}
+  .tint-ink .card-foot{border-color:#007D61}
+  .tint-ink .card-foot small{color:#C9EEDF}
+  .tint-ink .pill{background:#007D61;border-color:#007D61;color:var(--bg)}
+  .tint-sand{background:var(--sand)}
+
+  /* mockups */
+  .laptop{width:78%;max-width:440px;background:#1F2023;border-radius:12px 12px 0 0;padding:10px 10px 0}
+  .laptop .screen{background:var(--surface);border-radius:6px 6px 0 0;height:190px;padding:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-content:start}
+  .laptop .screen i{display:block;height:48px;border-radius:6px;background:var(--accent-soft)}
+  .laptop .screen i:nth-child(3n){background:#BFE6D4}
+  .laptop .screen .bar{grid-column:1/-1;height:12px;background:#EEF3EC;border-radius:4px}
+  .phone{width:150px;height:230px;background:#1F2023;border-radius:26px 26px 0 0;padding:9px 9px 0}
+  .phone .screen{background:var(--surface);height:100%;border-radius:18px 18px 0 0;padding:14px 10px;display:flex;flex-direction:column;gap:8px}
+  .phone .screen i{display:block;height:10px;border-radius:4px;background:#EEF3EC}
+  .phone .screen i.big{height:54px;background:var(--accent-soft)}
+  .phone .screen i.short{width:60%}
+
+  /* KEY EXPERIENCE BENTO */
+  .exp-bento{display:grid;grid-template-columns:1.7fr 1fr;gap:20px;align-items:start}
+  .box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px}
+  .box > h3{font-size:24px;margin-bottom:8px}
+  .job{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid var(--line)}
+  .job:last-child{border-bottom:0;padding-bottom:0}
+  .job-logo{width:44px;height:44px;border-radius:12px;background:var(--bg);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;letter-spacing:-0.02em}
+  .job-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+  .job-head h4{font-size:19px;letter-spacing:-0.02em}
+  .job-head h4 span{color:var(--muted);font-weight:600}
+  .job-years{font-size:14px;font-weight:600;color:var(--muted);white-space:nowrap}
+  .job p{font-size:16px;color:var(--ink-2);line-height:1.55}
+
+  .skills{display:flex;flex-direction:column;gap:20px}
+  .skill-group h4{font-size:15px;letter-spacing:-0.01em;margin:18px 0 10px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--ink-2)}
+  .box.olive{background:var(--accent-soft);border-color:var(--accent-soft)}
+  .box.olive .chip{background:var(--surface);border-color:transparent}
+
+  /* ABOUT ME */
+  .about-intro{max-width:640px;color:var(--ink-2);margin:-12px 0 32px}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;display:flex;flex-direction:column;gap:14px;min-height:220px}
+  .fact .emoji{font-size:30px;line-height:1}
+  .fact h4{font-size:20px}
+  .fact p{font-size:15px;color:var(--ink-2);line-height:1.5}
+  .fact.olive{background:var(--accent-soft);border-color:var(--accent-soft)}
+  .fact.sand{background:var(--sand);border-color:var(--sand)}
+
+  /* FOOTER */
+  footer{padding:88px 0 56px}
+  .contact{border-top:1px solid var(--line);padding-top:56px;display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+  .contact h2{font-size:clamp(36px,5vw,56px);max-width:620px}
+  .contact .links{display:flex;gap:24px;font-weight:600;color:var(--ink-2)}
+  .copy{margin-top:48px;font-size:14px;color:var(--muted)}
+
+  /* ===== CASE STUDY ===== */
+  .cs-hero{text-align:center;padding:72px 0 56px}
+  .cs-hero h1{font-size:clamp(44px,7vw,84px);max-width:900px;margin:0 auto 24px}
+  .cs-hero p{font-size:20px;color:var(--ink-2);max-width:620px;margin:0 auto}
+  .cs-cover{border-radius:28px;background:var(--accent);color:var(--bg);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:32px;padding:56px 64px 0;overflow:hidden;min-height:440px}
+  .cs-cover h2{font-size:clamp(30px,3.6vw,46px);padding-bottom:56px}
+  .cs-cover .phone{width:220px;height:380px;margin:0 auto;border-radius:36px 36px 0 0;padding:12px 12px 0}
+  .cs-cover .phone .screen{border-radius:26px 26px 0 0;padding:22px 16px;gap:10px}
+
+  .cs-section{padding:64px 0 8px}
+  .cs-section h2{font-size:clamp(34px,4.4vw,52px);margin-bottom:24px}
+  .cs-section p{color:var(--ink-2);margin-bottom:20px}
+  .cs-section p strong{color:var(--ink);font-weight:800}
+  .cs-section ul{margin:0 0 24px 22px;color:var(--ink-2)}
+  .cs-section li{margin-bottom:8px}
+  .cs-section li strong{color:var(--ink);font-weight:800}
+
+  .figure{margin:48px auto 8px;max-width:var(--max);padding:0 32px}
+  .figure .frame{border-radius:var(--radius);background:linear-gradient(135deg,var(--surface),var(--accent-soft));border:1px solid var(--line);min-height:380px;display:flex;align-items:flex-end;justify-content:center;padding-top:48px;overflow:hidden}
+  .figure figcaption{text-align:center;font-size:14px;color:var(--muted);margin-top:14px}
+
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 24px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .stat b{display:block;font-size:34px;font-weight:900;letter-spacing:-0.03em;line-height:1.1}
+  .stat span{font-size:14px;color:var(--muted);line-height:1.35;display:block;margin-top:6px}
+
+  .next{margin-top:96px;border-top:1px solid var(--line);padding-top:48px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .next small{display:block;font-size:15px;color:var(--muted);font-weight:600;margin-bottom:6px}
+  .next h3{font-size:clamp(26px,3vw,36px)}
+
+  .view{display:none}
+  .view.active{display:block}
+
+  @media (max-width:900px){
+    .hero-grid,.cs-cover,.exp-bento{grid-template-columns:1fr}
+    .grid{grid-template-columns:1fr}
+    .card.wide,.card.full{grid-column:auto}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .stats{grid-template-columns:1fr}
+    .nav-links{gap:18px;font-size:15px}
+    .cs-cover{padding:40px 32px 0}
+    .cs-cover h2{padding-bottom:0}
+    .photo{max-width:340px}
+  }
+  @media (max-width:560px){ .facts{grid-template-columns:1fr} }
+
+  /* additions v4 */
+  .cs-section ol{margin:0 0 24px 22px;color:var(--ink-2)}
+  .note{font-size:14px;color:var(--muted);line-height:1.5;margin-top:4px}
+  .stats.four{grid-template-columns:repeat(2,1fr)}
+  .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:8px 0 28px}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .step h4{font-size:18px;letter-spacing:-0.02em;margin-bottom:8px}
+  .step p{font-size:15px;line-height:1.55;margin:0;color:var(--ink-2)}
+  .wide-read{max-width:880px;margin:0 auto;padding:0 32px}
+  .soon{text-align:center;padding:120px 0 40px}
+  .soon h1{font-size:clamp(48px,8vw,96px);margin-bottom:20px}
+  .soon p{color:var(--ink-2);font-size:20px;max-width:520px;margin:0 auto 32px}
+  .card-soon{display:flex;align-items:center;justify-content:center;flex:1;min-height:140px;margin-top:24px;color:var(--muted);font-weight:700;letter-spacing:.12em;font-size:13px}
+  .cover-ink{background:#009473}
+  .cover-sand{background:#D3E6AE;color:var(--ink)}
+  .cover-sand .phone,.cover-ink .phone{background:#1F2023}
+  .grid-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;max-width:420px;margin:0 auto 56px}
+  .grid-tiles i{aspect-ratio:1;border-radius:14px;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center}
+  .grid-tiles i::after{content:"";width:42%;height:42%;border-radius:50% 50% 12px 50%;background:var(--accent)}
+  .grid-tiles i:nth-child(2n)::after{border-radius:12px;background:var(--ink)}
+  .grid-tiles i:nth-child(3n)::after{border-radius:50%;background:#B9D97A}
+  @media (max-width:900px){ .steps,.stats.four{grid-template-columns:1fr} }
+  .side-col{display:flex;flex-direction:column;gap:20px}
+  .box.pist{background:var(--sand);border-color:var(--sand)}
+  .edu{list-style:none;margin-top:10px}
+  .edu li{padding:12px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:15px;line-height:1.35}
+  .edu li:last-child{border:0;padding-bottom:0}
+  .edu b{display:block;font-weight:700}
+  .edu span{color:var(--ink-2);font-size:14px}
+  .earlier{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding-top:20px;font-size:15px;color:var(--ink-2)}
+  .earlier b{color:var(--ink)}
+  .hero p.lead{font-size:clamp(22px,2.2vw,26px);line-height:1.35;font-weight:700;color:var(--ink);letter-spacing:-0.01em;margin-bottom:28px}
+  .sub-h{font-size:24px;margin:56px 0 20px}
+  .logo img{height:30px;width:auto;display:block}
+  .photo-pic{display:block;max-width:440px;width:100%;justify-self:end}
+  .photo-pic img{width:100%;height:auto;display:block}
+  @media (max-width:900px){.photo-pic{justify-self:start;max-width:340px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a href="#home" class="logo" aria-label="Cinthya Flores, home"><img src="assets/cin-logo.png" alt="Cin" width="403" height="238"></a>
+    <div class="nav-links">
+      <a href="#home" data-scroll="work">Work</a>
+      <a href="#home" data-scroll="about">About</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HOME ================= -->
+<main id="view-home" class="view">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Hi, I'm Cinthya.</h1>
+        <p class="lead">I help teams figure out what's worth building, then get it shipped from first sketch to launch.</p>
+        <p><strong>Product Manager.</strong> I spent 4.5 years leading product at LOGO.com, where I joined as the first product person. I built the product function from the ground up: I defined the roadmap, set the metrics we used to measure success, and took ideas from the first mockup all the way to launch.</p>
+        <p><strong>Project Manager.</strong> In a startup you wear many hats, and I was never only the product manager. Throughout my career in startups I've owned execution from start to finish: organizing teams, keeping everyone aligned, and making sure what we planned actually shipped.</p>
+        <p><strong>Designer at heart.</strong> I started as a Product Designer and spent more than 6 years in the craft. That's why I hold a high quality bar. I know what a good design and a good app require because I've built them myself.</p>
+        <p><strong>AI learner.</strong> AI is part of my work every day, and I'm still learning and still amazed by it. I use it to build systems, organize my days and make my work more efficient, and also as a partner in my creative process. <a href="#ai-workflow" class="inline-link">Learn more about it here.</a></p>
+        <div class="ctas">
+          <a class="btn primary" href="#home" data-scroll="work">See my work</a>
+          <a class="btn" href="#home" data-scroll="contact">Get in touch</a>
+        </div>
+      </div>
+      <picture class="photo-pic"><source srcset="assets/cinthya.webp" type="image/webp"><img src="assets/cinthya.gif" alt="Cinthya Flores smiling" width="900" height="1112"></picture>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="grid">
+
+        <a href="#ai-website" class="card wide tint-olive">
+          <div class="card-top"><h3>From link in bio to AI website builder.</h3></div>
+          <div class="card-visual">
+            <div class="laptop"><div class="screen"><span class="bar"></span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          </div>
+          <div class="card-foot"><div><b>AI Website</b><small>Brand-to-site generator</small></div><span class="pill">VIEW</span></div>
+        </a>
+
+        <a href="#done-for-you" class="card tint-ink">
+          <div class="card-top"><h3>Show people their brand before asking them to pay.</h3></div>
+          <div class="card-visual">
+            <div class="phone"><div class="screen"><i class="big"></i><i></i><i class="short"></i><i></i><i class="short"></i></div></div>
+          </div>
+          <div class="card-foot"><div><b>Done for You Magic</b><small>Onboarding flow</small></div><span class="pill">VIEW</span></div>
+        </a>
+
+        <a href="#ai-icons" class="card tint-sand">
+          <div class="card-top"><h3>Logos no one else can have.</h3></div>
+          <div class="card-visual">
+            <div class="phone"><div class="screen"><i class="big"></i><i class="big"></i><i class="short"></i></div></div>
+          </div>
+          <div class="card-foot"><div><b>AI Icons</b><small>Icon generation for logos</small></div><span class="pill">VIEW</span></div>
+        </a>
+
+        <a href="#ai-workflow" class="card wide">
+          <div class="card-top"><h3>18 automations that made me a faster PM.</h3></div>
+          <div class="card-visual">
+            <div class="laptop"><div class="screen"><span class="bar"></span><i></i><i></i><i></i><i></i></div></div>
+          </div>
+          <div class="card-foot"><div><b>How I work with AI</b><small>Automations &amp; workflows</small></div><span class="pill">VIEW</span></div>
+        </a>
+
+        <a href="#my-app" class="card full tint-sand">
+          <div class="card-top"><h3>My own app.</h3></div>
+          <div class="card-soon">COMING SOON</div>
+          <div class="card-foot"><div><b>Side project</b><small>In progress</small></div><span class="pill">SOON</span></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY EXPERIENCE -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <h2>About me</h2>
+      <div class="exp-bento">
+
+        <div class="side-col">
+        <div class="box">
+          <h3>Recent experience</h3>
+          <div class="job">
+            <div class="job-logo">L.</div>
+            <div>
+              <div class="job-head"><h4>Product Manager / Project Manager <span>· LOGO.com</span></h4><span class="job-years">Apr 2022 — Sep 2026</span></div>
+              <p>LOGO.com gives entrepreneurs the tools to start a business, with 1M+ monthly visitors. I owned the vision, goals and roadmap for every product, from the logo editor and website builder to domains and AI tools. I built the processes and analytics from the ground up, took the website builder from Link in Bio to a multi-agent AI builder, grew monetization through upsell and bundling experiments and managed partnerships like Wix and Printful.</p>
+            </div>
+          </div>
+          <div class="job">
+            <div class="job-logo">C</div>
+            <div>
+              <div class="job-head"><h4>Product Designer <span>· Chorefree Living</span></h4><span class="job-years">Sep 2019 — Oct 2021</span></div>
+              <p>A home-services booking platform connecting realtors and property managers with cleaning and maintenance providers. I redesigned the website into a seamless booking experience that cut ordering time to 90 seconds and grew monthly recurring customers, and led product iteration with finance, sales and operations.</p>
+            </div>
+          </div>
+          <div class="job">
+            <div class="job-logo">S</div>
+            <div>
+              <div class="job-head"><h4>UX/UI &amp; Product Designer <span>· Sugar Design Group</span></h4><span class="job-years">May 2019 — Sep 2019</span></div>
+              <p>A design agency serving clients across the US and Canada. I created user flows, UI prototypes and design systems for 10+ clients.</p>
+            </div>
+          </div>
+          <div class="earlier">
+            <a class="inline-link" href="https://www.linkedin.com/in/cinthya-flores-h">Full experience on LinkedIn</a>
+          </div>
+        </div>
+
+          <div class="box pist">
+            <h3>Education</h3>
+            <ul class="edu">
+              <li><b>Bachelor of Product Design</b><span>Tecnológico de Monterrey</span></li>
+              <li><b>Diploma, Innovation &amp; Entrepreneurship</b><span>Tamwood Careers</span></li>
+              <li><b>Digital Marketing Bootcamp</b><span>Alacrity Canada</span></li>
+              <li><b>CAPM and PMP</b><span>In progress</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="side-col">
+          <div class="box olive skills">
+            <div>
+              <h3>Main skills</h3>
+              <div class="skill-group">
+                <h4>Product</h4>
+                <div class="chips"><span class="chip">Vision &amp; roadmap</span><span class="chip">RICE prioritization</span><span class="chip">Sprints &amp; specs</span><span class="chip">KPIs &amp; funnels</span><span class="chip">A/B testing</span><span class="chip">Pricing &amp; monetization</span><span class="chip">Partnerships</span></div>
+              </div>
+              <div class="skill-group">
+                <h4>AI</h4>
+                <div class="chips"><span class="chip">Multi-agent pipelines</span><span class="chip">AI evals</span><span class="chip">Prototyping with Claude</span><span class="chip">Automations</span></div>
+              </div>
+              <div class="skill-group">
+                <h4>Design</h4>
+                <div class="chips"><span class="chip">UX &amp; UI</span><span class="chip">User testing</span><span class="chip">Prototyping</span><span class="chip">Design systems</span></div>
+              </div>
+              <div class="skill-group">
+                <h4>Tools</h4>
+                <div class="chips"><span class="chip">Claude Code &amp; Design</span><span class="chip">Mixpanel</span><span class="chip">GrowthBook</span><span class="chip">Clarity</span><span class="chip">Userbrain</span><span class="chip">ChartMogul</span><span class="chip">Linear</span><span class="chip">Jira</span><span class="chip">Notion</span><span class="chip">Figma</span><span class="chip">Sanity</span><span class="chip">HelpScout</span><span class="chip">Excel</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <h3 class="sub-h">Outside work</h3>
+      <div class="facts">
+        <div class="fact olive">
+          <div class="emoji">🇲🇽</div>
+          <h4>I'm Mexican</h4>
+          <p>I grew up in Mexico City and have called Vancouver home for 7+ years. I'm always missing the tacos, though.</p>
+        </div>
+        <div class="fact">
+          <div class="emoji">🚀</div>
+          <h4>I'm an entrepreneur</h4>
+          <p>Building my own projects taught me to think like an owner, not just an employee.</p>
+        </div>
+        <div class="fact sand">
+          <div class="emoji">💃</div>
+          <h4>I love to dance</h4>
+          <p>I've been part of Mexican folk and Irish dance companies. I've danced everything! (Latin, jazz, tap, samba, you name it!)</p>
+        </div>
+        <div class="fact">
+          <div class="emoji">🎮</div>
+          <h4>Board and video games</h4>
+          <p>Horror video games are my favorite, and I love board game nights with friends. Lately, I've been obsessed with Root.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <h2>Let's build something customers get excited about.</h2>
+        <div class="links"><a href="https://www.linkedin.com/in/cinthya-flores-h" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:cinthyafloresh@hotmail.com">cinthyafloresh@hotmail.com</a></div>
+      </div>
+      <div class="copy">© 2026 Cinthya Flores · Vancouver, Canada</div>
+    </div>
+  </footer>
+</main>
+
+<!-- ================= PROJECT 1: AI WEBSITE ================= -->
+<main id="view-ai-website" class="view">
+  <section class="cs-hero">
+    <div class="wrap">
+      <h1>From link in bio to AI website builder.</h1>
+      <p>I turned our simplest product into a builder that creates a complete, on-brand website in one step.</p>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="cs-cover">
+      <h2>Your brand in. Your website out.</h2>
+      <div class="phone"><div class="screen"><i class="short"></i><i class="big"></i><i class="big"></i><i></i><i class="short"></i><i></i></div></div>
+    </div>
+  </div>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Context</h2>
+      <p>LOGO.com helps entrepreneurs start a business: logo, website, domain and email. Websites were what people wanted most, driving 48% of all upgrade clicks. Yet our website product was a Link in Bio page.</p>
+      <p>I owned it end to end, as PM and as UX/UI lead.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Problem</h2>
+      <p>Only 6.3% of people who started a website published it.</p>
+      <ul>
+        <li><strong>We couldn't compete.</strong> To find out why, I rebuilt a real Wix template inside our editor. It broke in four places: background images, text color, sticky navigation and fonts. Each one became a P0.</li>
+        <li><strong>The blank page killed momentum.</strong> Users who started from scratch were 50% less likely to publish.</li>
+        <li><strong>Every AI site looked the same.</strong> The generator built every site from the same preset sections.</li>
+      </ul>
+    </div>
+  </section>
+
+  <figure class="figure">
+    <div class="frame"><div class="laptop" style="width:70%;max-width:640px"><div class="screen" style="height:280px"><span class="bar"></span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+    <figcaption>A logo, fonts and one line about the business become a complete website.</figcaption>
+  </figure>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Solution</h2>
+      <p>Stop asking people to build a website. Build it for them.</p>
+      <ul>
+        <li><strong>Websites made for you.</strong> A logo, fonts and a short description become a publish-ready site. I moved generation to HTML so every layout is unique, while keeping every section editable.</li>
+        <li><strong>A multi-agent pipeline.</strong> Specialist agents write the copy, plan the layout and choose the imagery in parallel. I tested models and prompts against AI evals to raise quality.</li>
+        <li><strong>Accessible by default.</strong> Every palette is derived from the user's brand and always passes WCAG AA contrast.</li>
+        <li><strong>An editor that competes.</strong> We closed every P0 gap, cut the type scale to eight sizes, added inline editing and an AI agent that edits the site from a single sentence.</li>
+        <li><strong>No more blank pages.</strong> "Start from scratch" now applies the user's brand to a template, and a redesigned publish modal makes the last step obvious.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Impact</h2>
+      <div class="stats four">
+        <div class="stat"><b>3x</b><span>Publish rate, from 6.3% to 20.6%</span></div>
+        <div class="stat"><b>2x</b><span>Publish rate from the new publish modal alone, 14.3% to 29%</span></div>
+        <div class="stat"><b>−80%</b><span>Cost per AI-generated site</span></div>
+        <div class="stat"><b>29%</b><span>Of new one-page sites built with AI in July 2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="read">
+    <div class="next">
+      <div><small>Next project</small><h3>Show people their brand before asking them to pay.</h3></div>
+      <a class="btn primary" href="#done-for-you">Next project</a>
+    </div>
+  </div>
+  <footer><div class="wrap"><div class="copy">© 2026 Cinthya Flores · Vancouver, Canada</div></div></footer>
+</main>
+
+<!-- ================= PROJECT 2: DONE FOR YOU ================= -->
+<main id="view-done-for-you" class="view">
+  <section class="cs-hero">
+    <div class="wrap">
+      <h1>Show the brand first. Then sell the plan.</h1>
+      <p>I redesigned onboarding so people discover LOGO.com is a full branding platform, not just a free logo.</p>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="cs-cover cover-ink">
+      <h2>Your website, domain, email and brand kit. Already made.</h2>
+      <div class="phone"><div class="screen"><i class="big"></i><i class="short"></i><i></i><i class="big"></i><i class="short"></i></div></div>
+    </div>
+  </div>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Context</h2>
+      <p>People came to LOGO.com for a free logo. The business depended on what came next: a membership with a website, domain, business email and brand assets.</p>
+      <p>I set a new product direction: Done for You. Don't hand people tools. Hand them the finished thing.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Problem</h2>
+      <p>People got their logo and left. They didn't know what the membership was, or why they needed it.</p>
+      <ul>
+        <li><strong>We asked before we showed.</strong> Onboarding opened with pricing for products people hadn't seen. Almost no one converted there, and fewer kept going.</li>
+        <li><strong>We described instead of demonstrating.</strong> The flow told people what the plan could do. It never showed them.</li>
+        <li><strong>Most people dropped off.</strong> Only 15–37% finished the flow.</li>
+      </ul>
+    </div>
+  </section>
+
+  <figure class="figure">
+    <div class="frame"><div class="phone" style="width:240px;height:400px;border-radius:36px 36px 0 0;padding:12px 12px 0"><div class="screen" style="border-radius:26px 26px 0 0;padding:22px 16px;gap:10px"><i class="short"></i><i class="big"></i><i></i><i class="big"></i><i class="short"></i></div></div></div>
+    <figcaption>After the logo, onboarding reveals a complete brand, ready to use.</figcaption>
+  </figure>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Solution</h2>
+      <p>I turned onboarding into a reveal. A few questions about the business (what they sell, their vision, their tone), and their brand comes to life:</p>
+      <ul>
+        <li><strong>A website, ready to publish.</strong> Built by AI from their logo and answers.</li>
+        <li><strong>The right domain.</strong> Searched and ranked for them, ready to claim.</li>
+        <li><strong>Business email.</strong> Set up and waiting.</li>
+        <li><strong>A complete brand kit.</strong> Fonts, colors, icons, a social media suite and their first post.</li>
+      </ul>
+      <p>Only then comes the ask: get all of it with a membership. Every step is configurable without a deploy, so I tested and refined the flow continuously.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Impact</h2>
+      <div class="stats four">
+        <div class="stat"><b>3x</b><span>More likely to buy through the flow than without it</span></div>
+        <div class="stat"><b>+50%</b><span>Purchases after adding the business questions</span></div>
+        <div class="stat"><b>2x</b><span>Flow completion, from 15–37% to 56–71%</span></div>
+        <div class="stat"><b>+40%</b><span>Conversions from the new brand reveal screen</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="read">
+    <div class="next">
+      <div><small>Next project</small><h3>Logos no one else can have.</h3></div>
+      <a class="btn primary" href="#ai-icons">Next project</a>
+    </div>
+  </div>
+  <footer><div class="wrap"><div class="copy">© 2026 Cinthya Flores · Vancouver, Canada</div></div></footer>
+</main>
+
+<!-- ================= PROJECT 3: AI ICONS ================= -->
+<main id="view-ai-icons" class="view">
+  <section class="cs-hero">
+    <div class="wrap">
+      <h1>AI icons: logos no one else can have.</h1>
+      <p>I replaced stock icons with icons generated for each brand, built to work inside a logo.</p>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="cs-cover cover-sand">
+      <h2>One brand. One icon. Nobody else's.</h2>
+      <div class="grid-tiles"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Context</h2>
+      <p>Every logo on LOGO.com combined a designer-made template with an icon from the Noun Project. Clean, polished, and available to anyone.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Problem</h2>
+      <p>Users felt their logos were generic. They were right: the same icon could show up in a competitor's logo.</p>
+      <p>Off-the-shelf AI wasn't the answer either. Image models make pictures. A logo icon has to be:</p>
+      <ul>
+        <li><strong>Simple,</strong> and recognizable at any size.</li>
+        <li><strong>A clean vector,</strong> not an image full of detail and gradients.</li>
+        <li><strong>On-template,</strong> so it fits the type and layout around it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <figure class="figure">
+    <div class="frame" style="align-items:center;padding:48px"><div class="grid-tiles" style="margin:0;max-width:520px;grid-template-columns:repeat(4,1fr)"><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i></div></div>
+    <figcaption>Every icon style works with every designer-made logo template.</figcaption>
+  </figure>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Solution</h2>
+      <p>We built AI icons two ways:</p>
+      <ul>
+        <li><strong>Create your own.</strong> In the editor, users describe an icon, pick a style and get it in their brand colors.</li>
+        <li><strong>Made for you.</strong> For US users, we generate an icon from their answers before they see a single logo idea, so their first logos are already unique.</li>
+      </ul>
+      <p><strong>Our own pipeline.</strong> Low-cost image models generate the icon, and our proprietary system turns it into a clean SVG. I led the experimentation: comparing models, running 13 formal image tests and tuning prompts for flat, solid color.</p>
+      <p><strong>Built for our templates.</strong> Every style, from ink and brush to full color, was tuned so any generated icon looks right with any template a user picks or we suggest.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Impact</h2>
+      <div class="stats">
+        <div class="stat"><b>84%</b><span>Of US users chose a custom icon</span></div>
+        <div class="stat"><b>+10%</b><span>Signup completion when users engaged with icons</span></div>
+        <div class="stat"><b>+7.9%</b><span>Signups after launching full-color AI icons</span></div>
+      </div>
+      <p>AI icons became the company's main product bet, and launched as a standalone icon API.</p>
+    </div>
+  </section>
+
+  <div class="read">
+    <div class="next">
+      <div><small>Next project</small><h3>18 automations that made me a faster PM.</h3></div>
+      <a class="btn primary" href="#ai-workflow">Next project</a>
+    </div>
+  </div>
+  <footer><div class="wrap"><div class="copy">© 2026 Cinthya Flores · Vancouver, Canada</div></div></footer>
+</main>
+
+<!-- ================= PROJECT 4: HOW I WORK WITH AI ================= -->
+<main id="view-ai-workflow" class="view">
+  <section class="cs-hero">
+    <div class="wrap">
+      <h1>How I work with AI.</h1>
+      <p>18 automations that turned recurring PM work into systems the whole team could use.</p>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="cs-cover">
+      <h2>Less time searching. More time deciding.</h2>
+      <div class="laptop" style="width:100%;max-width:440px;margin:0 auto"><div class="screen" style="height:240px"><span class="bar"></span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    </div>
+  </div>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Context</h2>
+      <p>As the only PM at a startup, I was the team's memory: which report to trust, which event over-counts, what shipped last sprint. Every question went through me.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Problem</h2>
+      <p>Most of my week wasn't judgment. It was retrieval. That made me a bottleneck, and kept the team's knowledge in one person's head.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wide-read">
+      <h2>Solution</h2>
+      <p>I built an internal platform on Claude, connected to the tools we already used: Notion, Linear, Slack, Mixpanel, HelpScout, ChartMogul, GitHub and more. Each automation writes into the real system and documents its own rules, so anyone can run it.</p>
+      <div class="steps">
+        <div class="step"><h4>Reports that write themselves</h4><p>Daily and weekly revenue updates, the monthly company product update and the weekly goals page, each on its own schedule.</p></div>
+        <div class="step"><h4>From a call to a spec</h4><p>A call transcript becomes action items, then a PRD with competitor research and a ticket ready to build. One approval from me.</p></div>
+        <div class="step"><h4>Design with Claude</h4><p>Our Figma design system plus a problem becomes a recommendation, a mockup with our components and a file ready for devs, in 10–30 minutes instead of hours.</p></div>
+        <div class="step"><h4>Answers from the data</h4><p>A Mixpanel tool that finds the right events for any question and flags missing tracking, plus a daily check that alerts on anything unusual.</p></div>
+        <div class="step"><h4>Sprint demos and release notes</h4><p>A sprint demos doc every two weeks and a daily review of what shipped, so the team and leadership stay aligned.</p></div>
+        <div class="step"><h4>From support to product</h4><p>Support conversations become product requests, and missing help articles get drafted in our brand voice.</p></div>
+        <div class="step"><h4>Boards to see the data</h4><p>Analytics boards in hours, not days. I built an 11-chart investigation board in a single day.</p></div>
+        <div class="step"><h4>Finance, too</h4><p>A monthly classifier for R&amp;D tax-credit timesheets, built from each person's real commits, tickets and calendar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Impact</h2>
+      <div class="stats four">
+        <div class="stat"><b>18</b><span>Automations across 9 tools</span></div>
+        <div class="stat"><b>50h</b><span>Saved for the team every month</span></div>
+        <div class="stat"><b>2 of 3</b><span>Built for other teams: Engineering, CS, Finance and leadership</span></div>
+        <div class="stat"><b>10–30 min</b><span>From a problem to a dev-ready design</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="read">
+    <div class="next">
+      <div><small>Next project</small><h3>From link in bio to AI website builder.</h3></div>
+      <a class="btn primary" href="#ai-website">Next project</a>
+    </div>
+  </div>
+  <footer><div class="wrap"><div class="copy">© 2026 Cinthya Flores · Vancouver, Canada</div></div></footer>
+</main>
+
+<!-- ================= PROJECT 5: MY APP ================= -->
+<main id="view-my-app" class="view">
+  <section class="soon">
+    <div class="wrap">
+      <h1>My own app.</h1>
+      <p>I'm building something of my own. The full story is coming soon.</p>
+      <a class="btn primary" href="#home" data-scroll="work">Back to all work</a>
+    </div>
+  </section>
+  <footer><div class="wrap"><div class="copy">© 2026 Cinthya Flores · Vancouver, Canada</div></div></footer>
+</main>
+
+<script>
+  var VIEWS = ['home','ai-website','done-for-you','ai-icons','ai-workflow','my-app'];
+  var pending = null;
+  function route(){
+    var h = location.hash.replace('#','');
+    var v = VIEWS.indexOf(h) > -1 ? h : 'home';
+    document.querySelectorAll('.view').forEach(function(el){el.classList.toggle('active', el.id === 'view-' + v);});
+    if (pending){ var t=document.getElementById(pending); pending=null; if(t) setTimeout(function(){t.scrollIntoView({behavior:'smooth'});},30); }
+    else window.scrollTo(0,0);
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('[data-scroll]');
+    if (!a) return;
+    var target = a.getAttribute('data-scroll'), href = a.getAttribute('href');
+    if (location.hash === href || (href === '#home' && location.hash === '')) {
+      e.preventDefault();
+      var t = document.getElementById(target); if (t) t.scrollIntoView({behavior:'smooth'});
+    } else { pending = target; }
+  });
+  window.addEventListener('hashchange', route);
+  route();
+</script>
+
+</body>
+</html>
