@@ -220,6 +220,15 @@
   .card-foot h3{font-size:clamp(20px,2vw,26px);line-height:1.15}
   .card-foot .pill{flex-shrink:0}
   .card.full{min-height:240px}
+  .about-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:20px;align-items:stretch}
+  .a-exp,.a-out{grid-column:auto}
+  .a-out .facts{grid-template-columns:repeat(2,1fr);margin-top:20px;gap:14px}
+  .a-out .fact{min-height:0;padding:22px}
+  .a-edu{display:flex;flex-direction:column}
+  .a-edu .edu{flex:1;display:flex;flex-direction:column;justify-content:space-between}
+  .a-edu .edu li{padding:18px 0}
+  @media (max-width:900px){.about-grid{grid-template-columns:1fr}.a-exp,.a-out{grid-column:auto}}
+  @media (max-width:560px){.a-out .facts{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -291,10 +300,8 @@
   <section class="section" id="about">
     <div class="wrap">
       <h2>About me</h2>
-      <div class="exp-bento">
-
-        <div class="side-col">
-        <div class="box">
+      <div class="about-grid">
+<div class="box a-exp">
           <h3>Recent experience</h3>
           <div class="job">
             <div class="job-logo">L.</div>
@@ -321,20 +328,7 @@
             <a class="inline-link" href="https://www.linkedin.com/in/cinthya-flores-h">Full experience on LinkedIn</a>
           </div>
         </div>
-
-          <div class="box pist">
-            <h3>Education</h3>
-            <ul class="edu">
-              <li><b>Bachelor of Product Design</b><span>Tecnológico de Monterrey</span></li>
-              <li><b>Diploma, Innovation &amp; Entrepreneurship</b><span>Tamwood Careers</span></li>
-              <li><b>Digital Marketing Bootcamp</b><span>Alacrity Canada</span></li>
-              <li><b>CAPM and PMP</b><span>In progress</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="side-col">
-          <div class="box olive skills">
+<div class="box olive skills a-skills">
             <div>
               <h3>Main skills</h3>
               <div class="skill-group">
@@ -355,11 +349,9 @@
               </div>
             </div>
           </div>
-        </div>
-
-      </div>
-      <h3 class="sub-h">Outside work</h3>
-      <div class="facts">
+<div class="box a-out">
+<h3>Outside work</h3>
+<div class="facts">
         <div class="fact olive">
           <div class="emoji">🇲🇽</div>
           <h4>I'm Mexican</h4>
@@ -381,8 +373,19 @@
           <p>Horror video games are my favorite, and I love board game nights with friends. Lately, I've been obsessed with Root.</p>
         </div>
       </div>
-    </div>
-  </section>
+</div>
+<div class="box pist a-edu">
+            <h3>Education</h3>
+            <ul class="edu">
+              <li><b>Bachelor of Product Design</b><span>Tecnológico de Monterrey</span></li>
+              <li><b>Diploma, Innovation &amp; Entrepreneurship</b><span>Tamwood Careers</span></li>
+              <li><b>Digital Marketing Bootcamp</b><span>Alacrity Canada</span></li>
+              <li><b>CAPM and PMP</b><span>In progress</span></li>
+            </ul>
+          </div>
+</div>
+</div>
+</section>
 
 
   <footer id="contact">
