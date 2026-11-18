@@ -100,7 +100,8 @@
   .box > h3{font-size:24px;margin-bottom:8px}
   .job{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid var(--line)}
   .job:last-child{border-bottom:0;padding-bottom:0}
-  .job-logo{width:44px;height:44px;border-radius:12px;background:var(--bg);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;letter-spacing:-0.02em}
+  .job-logo{width:44px;height:44px;border-radius:12px;background:var(--bg);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;letter-spacing:-0.02em;overflow:hidden;flex-shrink:0}
+  .job-logo img{width:100%;height:100%;object-fit:cover;display:block}
   .job-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:6px}
   .job-head h4{font-size:19px;letter-spacing:-0.02em}
   .job-head h4 span{color:var(--muted);font-weight:600}
@@ -326,21 +327,21 @@
 <div class="box a-exp">
           <h3>Recent experience</h3>
           <div class="job">
-            <div class="job-logo">L.</div>
+            <div class="job-logo"><img src="assets/job-logo-com.webp" alt="LOGO.com" width="44" height="44"></div>
             <div>
               <div class="job-head"><h4>Product Manager / Project Manager <span>· LOGO.com</span></h4><span class="job-years">Apr 2022 — Sep 2026</span></div>
               <p>LOGO.com gives entrepreneurs the tools to start a business, with 1M+ monthly visitors. I owned the vision, goals and roadmap for every product, from the logo editor and website builder to domains and AI tools. I built the processes and analytics from the ground up, took the website builder from Link in Bio to a multi-agent AI builder, grew monetization through upsell and bundling experiments and managed partnerships like Wix and Printful.</p>
             </div>
           </div>
           <div class="job">
-            <div class="job-logo">C</div>
+            <div class="job-logo"><img src="assets/job-chorefree.webp" alt="Chorefree" width="44" height="44"></div>
             <div>
               <div class="job-head"><h4>Product Designer <span>· Chorefree Living</span></h4><span class="job-years">Sep 2019 — Oct 2021</span></div>
               <p>A home-services booking platform connecting realtors and property managers with cleaning and maintenance providers. I redesigned the website into a seamless booking experience that cut ordering time to 90 seconds and grew monthly recurring customers, and led product iteration with finance, sales and operations.</p>
             </div>
           </div>
           <div class="job">
-            <div class="job-logo">S</div>
+            <div class="job-logo"><img src="assets/job-sugar.webp" alt="Sugar Design Group" width="44" height="44"></div>
             <div>
               <div class="job-head"><h4>UX/UI &amp; Product Designer <span>· Sugar Design Group</span></h4><span class="job-years">May 2019 — Sep 2019</span></div>
               <p>A design agency serving clients across the US and Canada. I created user flows, UI prototypes and design systems for 10+ clients.</p>
