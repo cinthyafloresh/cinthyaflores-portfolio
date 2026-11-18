@@ -235,6 +235,12 @@
   .cs-cover.cover-shot h2{padding-bottom:36px;max-width:680px}
   .cs-cover.cover-shot img{width:100%;height:auto;display:block;border-radius:12px 12px 0 0;box-shadow:0 20px 50px -20px rgba(0,0,0,.45)}
   @media (max-width:900px){.cs-cover.cover-shot{padding:32px 20px 0}}
+  .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+  .ba-item{background:var(--accent-soft);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:14px}
+  .ba-item img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 10px 30px -14px rgba(0,0,0,.3)}
+  .ba-tag{align-self:flex-start;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:var(--surface);color:var(--ink-2)}
+  .ba-tag.after{background:var(--accent);color:#fff}
+  @media (max-width:900px){.ba-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -435,6 +441,14 @@
       </ul>
     </div>
   </section>
+
+  <figure class="figure ba">
+    <div class="ba-grid">
+      <div class="ba-item"><span class="ba-tag">Before</span><img src="assets/ai-website-before.webp" alt="Before: the old website editor with element menus and a manually built coffee shop page" loading="lazy"></div>
+      <div class="ba-item"><span class="ba-tag after">After</span><img src="assets/ai-website-after.webp" alt="After: the AI site assistant building a complete one-page site for a yoga studio" loading="lazy"></div>
+    </div>
+    <figcaption>From building every section by hand to describing the business and getting a complete site.</figcaption>
+  </figure>
 
   <section class="cs-section">
     <div class="read">
