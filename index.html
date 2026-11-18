@@ -179,6 +179,8 @@
 
   /* additions v4 */
   .cs-section ol{margin:0 0 24px 22px;color:var(--ink-2)}
+  .cs-section ol > li{margin-bottom:14px}
+  .cs-section li ul{margin:10px 0 0 20px}
   .note{font-size:14px;color:var(--muted);line-height:1.5;margin-top:4px}
   .stats.four{grid-template-columns:repeat(2,1fr)}
   .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:8px 0 28px}
@@ -424,20 +426,18 @@
   <section class="cs-hero">
     <div class="wrap">
       <h1>Transforming our link in bio to a powerful AI website builder.</h1>
-      <p>I turned our simplest product into a builder that creates a complete, on-brand website in one step.</p>
+      <p>We transformed our simple link in bio tool into a builder that creates a complete, on-brand website powered by AI.</p>
     </div>
   </section>
   <div class="wrap">
     <div class="cs-cover cover-shot">
-      <h2>Your brand in. Your website out.</h2>
       <img src="assets/ai-website.webp" alt="LOGO.com AI website builder: the site assistant building a one-page site for a yoga studio" width="1600" height="909">
     </div>
 
   <section class="cs-section">
     <div class="read">
       <h2>Context</h2>
-      <p>LOGO.com helps entrepreneurs start a business: logo, website, domain and email. Websites were what people wanted most, driving 48% of all upgrade clicks. Yet our website product was a Link in Bio page.</p>
-      <p>I owned it end to end, as PM and as UX/UI lead.</p>
+      <p>LOGO.com helps entrepreneurs start a business: logo, website, domain and email. Websites were what people wanted most, driving 48% of all upgrade clicks. Yet our website product was a simple Link in Bio page that could not cover the needs of our users.</p>
     </div>
   </section>
 
@@ -446,10 +446,33 @@
       <h2>Problem</h2>
       <p>Only 6.3% of people who started a website published it.</p>
       <ul>
-        <li><strong>We couldn't compete.</strong> To find out why, I rebuilt a real Wix template inside our editor. It broke in four places: background images, text color, sticky navigation and fonts. Each one became a P0.</li>
+        <li><strong>Users needed more than a link in bio.</strong> People came to promote their business, and a single page of links couldn't hold what a real website needs.</li>
         <li><strong>The blank page killed momentum.</strong> Users who started from scratch were 50% less likely to publish.</li>
-        <li><strong>Every AI site looked the same.</strong> The generator built every site from the same preset sections.</li>
+        <li><strong>Editing was hard.</strong> Like every website builder, a template looks great until you start editing it. Keeping a pre-made page looking good takes design skills most of our users don't have, and the users who engaged with our editor told us it felt complicated.</li>
+        <li><strong>The results didn't match expectations.</strong> What people ended up with didn't look like the site they had in mind, so many never published it.</li>
       </ul>
+    </div>
+  </section>
+
+  
+
+  <section class="cs-section">
+    <div class="read">
+      <h2>Solution</h2>
+      <p>I started with research. I ran an extensive review of the market and of competitors, both AI and traditional builders, and talked with power users who were already using LOGO.com to promote their products. With the product team, I combined that with quantitative and qualitative data: event tracking and funnels, the pages users actually generated and the features they reached for, to see where the experience was failing and what users were really looking for.</p>
+      <p>The answer was a balance. Builders like Wix and WordPress are powerful, but that power makes them complex. Our users aren't tech-savvy: they want a site that looks good and covers the basics, without endless customization. And we already had everything we needed from their brand, so we could show them a site instead of asking them to build one. We split the work into three stages:</p>
+      <ol>
+        <li><strong>From link in bio to a real website builder.</strong> We added the features a website needs, like sections, background images, text colors, sticky navigation and fonts, and revamped the UI, keeping it simple on purpose.</li>
+        <li><strong>An editor that works with AI first.</strong> We trained the model on the editor itself, so AI could control the website builder and make the changes users asked for from a single sentence, with live preview and undo.</li>
+        <li><strong>Templates curated for each user.</strong> Today's AI models repeat the same patterns and lack design taste. So the product team designed templates on solid design principles and trained the model on them through a multi-agent pipeline:
+          <ul>
+            <li>Specialist agents write the copy, plan the layout and choose the imagery in parallel.</li>
+            <li>Every palette comes from the user's brand and always passes WCAG AA contrast.</li>
+            <li>We judged and evaluated generated sites, refined the templates and iterated with the dev team over many rounds. Fixing a template fixes every site built from it.</li>
+          </ul>
+        </li>
+      </ol>
+      <p>Now every user starts with a site already built for them, with their colors, fonts, copy and brand, so they need far fewer edits. They can still start from scratch or from a template, but we show people what they need instead of making them find it on their own.</p>
     </div>
   </section>
 
@@ -463,20 +486,6 @@
 
   <section class="cs-section">
     <div class="read">
-      <h2>Solution</h2>
-      <p>Stop asking people to build a website. Build it for them.</p>
-      <ul>
-        <li><strong>Websites made for you.</strong> A logo, fonts and a short description become a publish-ready site. I moved generation to HTML so every layout is unique, while keeping every section editable.</li>
-        <li><strong>A multi-agent pipeline.</strong> Specialist agents write the copy, plan the layout and choose the imagery in parallel. I tested models and prompts against AI evals to raise quality.</li>
-        <li><strong>Accessible by default.</strong> Every palette is derived from the user's brand and always passes WCAG AA contrast.</li>
-        <li><strong>An editor that competes.</strong> We closed every P0 gap, cut the type scale to eight sizes, added inline editing and an AI agent that edits the site from a single sentence.</li>
-        <li><strong>No more blank pages.</strong> "Start from scratch" now applies the user's brand to a template, and a redesigned publish modal makes the last step obvious.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="cs-section">
-    <div class="read">
       <h2>Impact</h2>
       <div class="stats four">
         <div class="stat"><b>3x</b><span>Publish rate, from 6.3% to 20.6%</span></div>
@@ -484,6 +493,7 @@
         <div class="stat"><b>−80%</b><span>Cost per AI-generated site</span></div>
         <div class="stat"><b>29%</b><span>Of new one-page sites built with AI in July 2026</span></div>
       </div>
+      <p>With these changes, publishing more than tripled in four months, setting a new record every month from May to August 2026. Users stopped getting stuck on a blank page or a hard editor: they started from a site made for them, and published it. And because the multi-agent pipeline cut the cost of each site by 80%, AI generation became cheap enough to scale.</p>
     </div>
   </section>
 
