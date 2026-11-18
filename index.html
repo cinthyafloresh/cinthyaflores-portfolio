@@ -166,7 +166,9 @@
   .next h3{font-size:clamp(26px,3vw,36px)}
 
   .view{display:none}
-  .view.active{display:block}
+  .view.active{display:block;animation:viewIn .45s cubic-bezier(.2,.7,.2,1)}
+  @keyframes viewIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.view.active{animation:none}html{scroll-behavior:auto}}
 
   @media (max-width:900px){
     .hero-grid,.cs-cover,.exp-bento{grid-template-columns:1fr}
@@ -753,12 +755,21 @@
 <script>
   var VIEWS = ['home','ai-website','done-for-you','ai-icons','ai-workflow'];
   var pending = null;
+  var homeY = 0, current = null;
+  function jump(y){ var r=document.documentElement; r.style.scrollBehavior='auto'; void r.offsetHeight; window.scrollTo({top:y,left:0,behavior:'instant'}); requestAnimationFrame(function(){ r.style.scrollBehavior=''; }); }
   function route(){
     var h = location.hash.replace('#','');
     var v = VIEWS.indexOf(h) > -1 ? h : 'home';
+    if (current === 'home' && v !== 'home') homeY = window.scrollY;
     document.querySelectorAll('.view').forEach(function(el){el.classList.toggle('active', el.id === 'view-' + v);});
-    if (pending){ var t=document.getElementById(pending); pending=null; if(t) setTimeout(function(){t.scrollIntoView({behavior:'smooth'});},30); }
-    else window.scrollTo(0,0);
+    var t = pending ? document.getElementById(pending) : null; pending = null;
+    if (t) {
+      if (current === v) t.scrollIntoView({behavior:'smooth'});
+      else jump(t.getBoundingClientRect().top + window.scrollY - 80);
+    }
+    else if (v === 'home' && current && current !== 'home') jump(homeY);
+    else jump(0);
+    current = v;
   }
   document.addEventListener('click', function(e){
     var a = e.target.closest('[data-scroll]');
