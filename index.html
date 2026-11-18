@@ -81,6 +81,8 @@
   .tint-ink .card-foot small{color:#C9EEDF}
   .tint-ink .pill{background:#007D61;border-color:#007D61;color:var(--bg)}
   .tint-sand{background:var(--sand)}
+  .tint-sage{background:#CDE9DA}
+  .work-intro{font-size:19px;line-height:1.5;color:var(--ink-2);max-width:760px;margin:-8px 0 32px}
 
   /* mockups */
   .laptop{width:78%;max-width:440px;background:#1F2023;border-radius:12px 12px 0 0;padding:10px 10px 0}
@@ -195,7 +197,9 @@
   .soon p{color:var(--ink-2);font-size:20px;max-width:520px;margin:0 auto 32px}
   .card-soon{display:flex;align-items:center;justify-content:center;flex:1;min-height:140px;margin-top:24px;color:var(--muted);font-weight:700;letter-spacing:.12em;font-size:13px}
   .cover-ink{background:#009473}
-  .cover-sand{background:#D3E6AE;color:var(--ink)}
+  .cover-sand{background:var(--sand);color:var(--ink)}
+  .cover-mint{background:var(--accent-soft);color:var(--ink)}
+  .cover-sage{background:#CDE9DA;color:var(--ink)}
   .cover-sand .phone,.cover-ink .phone{background:#1F2023}
   .grid-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;max-width:420px;margin:0 auto 56px}
   .grid-tiles i{aspect-ratio:1;border-radius:14px;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center}
@@ -297,12 +301,13 @@
   <section class="section" id="work">
     <div class="wrap">
       <h2>Work</h2>
+      <p class="work-intro">As the only Product Manager at LOGO.com, I led each of these projects end to end: research, planning, execution, testing and monitoring after launch.</p>
       <div class="grid">
 <a href="#ai-website" class="card wide tint-olive">
 <div class="card-visual shot"><img src="assets/ai-website-card.webp" alt="AI website builder creating a site for a yoga studio" loading="lazy"></div>
 <div class="card-foot"><h3>Transforming our link in bio to a powerful AI website builder.</h3><span class="pill">VIEW</span></div>
 </a>
-<a href="#ai-workflow" class="card">
+<a href="#ai-workflow" class="card tint-sage">
 <div class="card-visual">
             <div class="laptop"><div class="screen"><span class="bar"></span><i></i><i></i><i></i><i></i></div></div>
           </div>
@@ -432,7 +437,7 @@
     </div>
   </section>
   <div class="wrap">
-    <div class="cs-cover cover-shot">
+    <div class="cs-cover cover-mint cover-shot">
       <img src="assets/ai-website.webp" alt="LOGO.com AI website builder: the site assistant building a one-page site for a yoga studio" width="1600" height="909">
     </div>
 
@@ -673,7 +678,7 @@
     </div>
   </section>
   <div class="wrap">
-    <div class="cs-cover">
+    <div class="cs-cover cover-sage">
       <h2>Less time searching and documenting. More time deciding and advocating for the users.</h2>
       <div class="laptop" style="width:100%;max-width:440px;margin:0 auto"><div class="screen" style="height:240px"><span class="bar"></span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
     </div>
