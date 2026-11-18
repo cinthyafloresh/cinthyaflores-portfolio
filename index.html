@@ -261,6 +261,7 @@
   .flow-item p{padding-left:40px;min-height:28px}
   .flow-item img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 10px 30px -14px rgba(0,0,0,.3)}
   .flow-wide{grid-column:1/-1}
+  .flow-item.no-num p{padding-left:0}
   .flow-wide img{max-width:860px;margin:0 auto}
   @media (max-width:900px){.flow-grid{grid-template-columns:1fr}}
   .shot-frame{background:var(--sand);border-radius:var(--radius);padding:24px}
@@ -651,6 +652,13 @@
 
   <figure class="figure">
     <div class="shot-frame"><img src="assets/icons-editor.webp" alt="Logo editor: a prompt generates AI icons that fit the Strong Flow logo template" loading="lazy"></div>
+  </figure>
+
+  <figure class="figure flow">
+    <div class="flow-grid">
+      <div class="flow-item no-num"><p>Create your own, anywhere in the editor</p><img src="assets/icons-way-editor.webp" alt="Logo editor with a Generate Custom Icons button next to the icon library" loading="lazy"></div>
+      <div class="flow-item no-num"><p>Made for you, during the logo flow</p><img src="assets/icons-way-flow.webp" alt="Logo flow step asking users to describe a custom icon, with AI-suggested ideas" loading="lazy"></div>
+    </div>
   </figure>
 
   <section class="cs-section">
