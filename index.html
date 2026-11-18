@@ -249,6 +249,8 @@
   .flow-item p{padding-left:40px;min-height:28px}
   .flow-item img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 10px 30px -14px rgba(0,0,0,.3)}
   @media (max-width:900px){.flow-grid{grid-template-columns:1fr}}
+  .shot-frame{background:var(--sand);border-radius:var(--radius);padding:24px}
+  .shot-frame img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 10px 30px -14px rgba(0,0,0,.3)}
 </style>
 </head>
 <body>
@@ -298,9 +300,7 @@
 <div class="card-foot"><h3>AI made me a more efficient PM. Here's how I use it every day.</h3><span class="pill">VIEW</span></div>
 </a>
 <a href="#ai-icons" class="card tint-sand">
-<div class="card-visual">
-            <div class="phone"><div class="screen"><i class="big"></i><i class="big"></i><i class="short"></i></div></div>
-          </div>
+<div class="card-visual shot"><img src="assets/icons-ideas-card.webp" alt="Logo ideas for Strong Flow, each with its own AI-generated icon" loading="lazy"></div>
 <div class="card-foot"><h3>The only fully editable, AI-powered logo editor on the market.</h3><span class="pill">VIEW</span></div>
 </a>
 <a href="#done-for-you" class="card wide tint-ink">
@@ -579,11 +579,10 @@
     </div>
   </section>
   <div class="wrap">
-    <div class="cs-cover cover-sand">
+    <div class="cs-cover cover-sand cover-shot">
       <h2>One brand. One icon. Nobody else's.</h2>
-      <div class="grid-tiles"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <img src="assets/icons-ideas.webp" alt="Logo ideas page for Strong Flow: every logo idea with a unique AI-generated icon" width="1600" height="796">
     </div>
-  </div>
 
   <section class="cs-section">
     <div class="read">
@@ -605,11 +604,6 @@
     </div>
   </section>
 
-  <figure class="figure">
-    <div class="frame" style="align-items:center;padding:48px"><div class="grid-tiles" style="margin:0;max-width:520px;grid-template-columns:repeat(4,1fr)"><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i><i style="background:var(--surface)"></i></div></div>
-    <figcaption>Every icon style works with every designer-made logo template.</figcaption>
-  </figure>
-
   <section class="cs-section">
     <div class="read">
       <h2>Solution</h2>
@@ -622,6 +616,11 @@
       <p><strong>Built for our templates.</strong> Every style, from ink and brush to full color, was tuned so any generated icon looks right with any template a user picks or we suggest.</p>
     </div>
   </section>
+
+  <figure class="figure">
+    <div class="shot-frame"><img src="assets/icons-editor.webp" alt="Logo editor: a prompt generates AI icons that fit the Strong Flow logo template" loading="lazy"></div>
+    <figcaption>Create your own: describe the icon, and every option is generated to fit the logo.</figcaption>
+  </figure>
 
   <section class="cs-section">
     <div class="read">
