@@ -541,20 +541,20 @@
       <h2>How the agent system evolved</h2>
       <p>We didn't start multi-agent. We learned our way there, through several rounds of iteration.</p>
       <h3>V1: Broad agents</h3>
-      <p>Our first pipeline had only a few agents: one extracted the brand — colors, fonts, and what the business actually does — one matched a template, and one handled content. A single assembler pulled blocks from different templates and did everything at once: layout, copy, images, and applying the brand. A Design Judge and a final judge checked the result at the end.</p>
-      <p><strong>What broke:</strong> Some agents were doing too much. The assembler was making too many different kinds of decisions in one pass, and it made poor ones. A final, generalist judge could tell us a site wasn't good enough — it couldn't reliably tell us why, or fix the specific domain that failed. We had no expert judges for each domain, so we were evaluating everything, and therefore nothing well.</p>
+      <p>Our first pipeline had only a few agents: one extracted the brand (colors, fonts, and what the business actually does), one matched a template, and one handled content. A single assembler pulled blocks from different templates and did everything at once: layout, copy, images, and applying the brand. A Design Judge and a final judge checked the result at the end.</p>
+      <p><strong>What broke:</strong> Some agents were doing too much. The assembler was making too many different kinds of decisions in one pass, and it made poor ones. A final, generalist judge could tell us a site wasn't good enough, but it couldn't reliably tell us why, or fix the specific domain that failed. We had no expert judges for each domain, so we were evaluating everything, and therefore nothing well.</p>
       <h3>V2: Specialize the makers</h3>
       <p>We split the overloaded work into single-job agents:</p>
       <ul>
-        <li><strong>Brand agent</strong> — didn't just extract colors and fonts. It ran them through contrast checks to build a complementary palette that would actually work — every palette passes WCAG AA contrast.</li>
-        <li><strong>Copywriter agent</strong> — wrote the text, and nothing else.</li>
-        <li><strong>Image agent</strong> — handled imagery only.</li>
-        <li><strong>Block-selection agent</strong> — its only job was choosing the right blocks from our designer-built templates.</li>
+        <li><strong>Brand agent:</strong> didn't just extract colors and fonts. It ran them through contrast checks to build a complementary palette that would actually work. Every palette passes WCAG AA contrast.</li>
+        <li><strong>Copywriter agent:</strong> wrote the text, and nothing else.</li>
+        <li><strong>Image agent:</strong> handled imagery only.</li>
+        <li><strong>Block-selection agent:</strong> its only job was choosing the right blocks from our designer-built templates.</li>
       </ul>
       <p>That made the pipeline both a bit faster and much more specific: work could run in parallel instead of waiting on one agent to do everything in sequence, and each output could be evaluated, fixed or replaced on its own criteria. A bad palette became a brand-agent problem. Weak copy became a copywriter problem. We stopped regenerating whole sites to fix one thing.</p>
       <h3>The editor, then the final judge</h3>
-      <p>Specialized parts still need someone to make them a page. So before the final judge, we added an editor agent — the role a magazine editor plays: it puts everything together and evaluates the site as a whole: coherence across sections, spacing, and basic website design principles. Only after that editorial pass did the final judge make the last check.</p>
-      <p>That order matters: specialist agents, specialist checks, an editor for the whole, and only then a final verdict. Fixing a problem stopped being "regenerate and hope" and became "fix this agent, this template, this rule" — which then fixed every site built after it. That split — not just adding more agents — is what let quality rise while cost per generated site fell 80%.</p>
+      <p>Specialized parts still need someone to make them a page. So before the final judge, we added an editor agent, playing the role a magazine editor plays. It puts everything together and evaluates the site as a whole: coherence across sections, spacing, and basic website design principles. Only after that editorial pass did the final judge make the last check.</p>
+      <p>That order matters: specialist agents, specialist checks, an editor for the whole, and only then a final verdict. Fixing a problem stopped being "regenerate and hope" and became "fix this agent, this template, this rule," which then fixed every site built after it. That split, not just adding more agents, is what let quality rise while cost per generated site fell 80%.</p>
     </div>
   </section>
 
@@ -564,7 +564,7 @@
       <ol>
         <li><strong>Show, don't ask.</strong> Instead of improving the blank editor, we generated a complete site from the brand the user had already given us. Users who started from scratch were 50% less likely to publish.</li>
         <li><strong>Templates over free generation.</strong> Pure model output repeated the same patterns and lacked design taste. We invested in designer-built templates and built the pipeline on them. Fixing a template fixes every site built from it.</li>
-        <li><strong>Generation and evaluation are different jobs.</strong> Makers make, judges judge — per domain, not just at the end. That separation is the product lesson behind the whole system.</li>
+        <li><strong>Generation and evaluation are different jobs.</strong> Makers make, judges judge, per domain and not just at the end. That separation is the product lesson behind the whole system.</li>
       </ol>
     </div>
   </section>
@@ -580,9 +580,9 @@
     <div class="read">
       <h2>The hardest lesson: codifying taste</h2>
       <p>The technology wasn't our first problem. Alignment was.</p>
-      <p>At the start, our development team and our designer were working in parallel — the developers on their side, the designer creating the templates our agents and judges were based on — but they were disconnected. Each was solving the same problem in their own way. What I changed was how we worked: more sessions together, explicitly to share learnings — what is working, what isn't — and to build the system collaboratively instead of in parallel.</p>
-      <p>That forced the hardest question of the project: <strong>what actually makes a website a good website?</strong> You can list principles — spacing, hierarchy, contrast, coherence — and we did. But a good site is principles <em>plus</em> design taste, a good eye. Turning that taste into something a model, a template and a judge could all use, without flattening it into a checklist, took constant alignment between design and development: many iterations, many tests, experimenting over and over, trying several different models, and evaluating real output constantly.</p>
-      <p>I reviewed the websites our users were actually creating, every day. That's how I caught problems — a spacing pattern that kept breaking, a palette combination that technically passed but looked wrong — before they ever became a user complaint. The eval loop wasn't a dashboard. It was a daily habit.</p>
+      <p>At the start, our development team and our designer were working in parallel: the developers on their side, the designer creating the templates our agents and judges were based on. But they were disconnected. Each was solving the same problem in their own way. What I changed was how we worked: more sessions together, explicitly to share learnings (what is working, what isn't) and to build the system collaboratively instead of in parallel.</p>
+      <p>That forced the hardest question of the project: <strong>what actually makes a website a good website?</strong> You can list principles, like spacing, hierarchy, contrast and coherence, and we did. But a good site is principles <em>plus</em> design taste, a good eye. Turning that taste into something a model, a template and a judge could all use, without flattening it into a checklist, took constant alignment between design and development: many iterations, many tests, experimenting over and over, trying several different models, and evaluating real output constantly.</p>
+      <p>I reviewed the websites our users were actually creating, every day. That's how I caught problems, like a spacing pattern that kept breaking or a palette combination that technically passed but looked wrong, before they ever became a user complaint. The eval loop wasn't a dashboard. It was a daily habit.</p>
     </div>
   </section>
 
@@ -603,7 +603,7 @@
   <section class="cs-section">
     <div class="read">
       <h2>What I would do differently</h2>
-      <p>Start with the specialized structure earlier, and start the design–development alignment sessions on day one, not after the disconnect shows up in the output. Our first version proved users wanted a generated site — but it also taught us, the expensive way, that in an agentic system the quality ceiling is set by how narrowly each agent's job is defined, whether an expert is judging that specific job, and whether the humans building it share one definition of "good."</p>
+      <p>Start with the specialized structure earlier, and start the design and development alignment sessions on day one, not after the disconnect shows up in the output. Our first version proved users wanted a generated site, but it also taught us, the expensive way, that in an agentic system the quality ceiling is set by how narrowly each agent's job is defined, whether an expert is judging that specific job, and whether the humans building it share one definition of "good."</p>
     </div>
   </section>
 
@@ -644,20 +644,20 @@
   <section class="cs-section">
     <div class="read">
       <h2>Problem</h2>
-      <p>Most users arrive for a free logo — more than 98% start there — but the business depends on what comes next: website, domain, business email and brand assets in a membership. After signup, users landed on a dashboard and had to find and set up each product on their own.</p>
+      <p>Most users arrive for a free logo (more than 98% start there), but the business depends on what comes next: website, domain, business email and brand assets in a membership. After signup, users landed on a dashboard and had to find and set up each product on their own.</p>
       <ul>
         <li>Users got their logo and left. Known mainly as a logo editor, they didn't know what else we offered or why they needed it.</li>
         <li>Too much friction: getting any other product took several clicks, and the burden of finding the right solution was on the user.</li>
         <li>We lost more than 40% of users before they engaged with any of the products that drive revenue.</li>
       </ul>
-      <p>The insight: we were asking users to <em>imagine</em> the value of a membership. Users don't buy imagined value — especially non-technical founders who came for one free thing.</p>
+      <p>The insight: we were asking users to <em>imagine</em> the value of a membership. Users don't buy imagined value, especially non-technical founders who came for one free thing.</p>
     </div>
   </section>
 
   <section class="cs-section">
     <div class="read">
       <h2>Hypothesis</h2>
-      <p>If, instead of a dashboard, we show each user their own brand already built — their website, their domain, their brand kit, with their logo and colors — conversion will rise because the decision changes from "should I pay for tools?" to "do I want to keep what I already see?"</p>
+      <p>If, instead of a dashboard, we show each user their own brand already built (their website, their domain, their brand kit, with their logo and colors), conversion will rise because the decision changes from "should I pay for tools?" to "do I want to keep what I already see?"</p>
     </div>
   </section>
 
@@ -665,11 +665,11 @@
     <div class="read">
       <h2>Solution: the reveal, not the tour</h2>
       <ol>
-        <li><strong>A few questions about the business</strong> — what they sell, who they are, vision, brand tone. This is also the input our AI builder needs, so the questions are not a form: they are the first step of the product working.</li>
+        <li><strong>A few questions about the business:</strong> what they sell, who they are, vision, brand tone. This is also the input our AI builder needs, so the questions are not a form: they are the first step of the product working.</li>
         <li><strong>A website ready to publish</strong>, built by our AI website builder from their brand. Regenerate, edit, or publish in one click.</li>
         <li><strong>A domain already matched</strong>, ready to claim and connect in one click, removing the classic website+domain setup friction.</li>
-        <li><strong>Brand Kit</strong> — every logo version and file, and what each is for.</li>
-        <li><strong>The Brand Plan, presented last</strong> — the plan that includes all of it, shown only after the user has seen its value in their own brand.</li>
+        <li><strong>Brand Kit:</strong> every logo version and file, and what each is for.</li>
+        <li><strong>The Brand Plan, presented last:</strong> the plan that includes all of it, shown only after the user has seen its value in their own brand.</li>
       </ol>
       <p>Order is the strategy: value first, price last. A plan page before the reveal is a sales pitch; after the reveal, it is a receipt.</p>
     </div>
@@ -688,8 +688,8 @@
   <section class="cs-section">
     <div class="read">
       <h2>Key decisions and trade-offs</h2>
-      <p><strong>1. Questions upfront vs. straight to dashboard.</strong> Asking questions right after signup adds friction at the moment of highest drop-off risk — we accepted it because each answer visibly improved what the user saw minutes later; a question that produces a visible result does not feel like friction, it feels like progress.</p>
-      <p><strong>2. Generate real assets for free users vs. cheap previews.</strong> Generating a real website/domain match for users who may never pay has a real AI cost. We accepted that cost at the top of the funnel because a real, personal asset converts and a generic mockup doesn't — and we managed it with the same cost discipline from the AI Website Builder work, where rebuilding the pipeline cut cost per generated site by 80%. DFY is the monetization surface, the AI Builder is the engine, and its unit economics are what made DFY viable.</p>
+      <p><strong>1. Questions upfront vs. straight to dashboard.</strong> Asking questions right after signup adds friction at the moment of highest drop-off risk. We accepted it because each answer visibly improved what the user saw minutes later; a question that produces a visible result does not feel like friction, it feels like progress.</p>
+      <p><strong>2. Generate real assets for free users vs. cheap previews.</strong> Generating a real website/domain match for users who may never pay has a real AI cost. We accepted that cost at the top of the funnel because a real, personal asset converts and a generic mockup doesn't, and we managed it with the same cost discipline from the AI Website Builder work, where rebuilding the pipeline cut cost per generated site by 80%. DFY is the monetization surface, the AI Builder is the engine, and its unit economics are what made DFY viable.</p>
       <p><strong>3. Bundle vs. à la carte.</strong> Instead of selling website, domain and email separately in the flow, the reveal presents them as one Brand Plan. Presenting the products as a bundle lifted yearly plan purchases by 68% and domain attachment 5x compared with selling them separately, because the domain stopped being an extra decision and became part of "my site is ready."</p>
     </div>
   </section>
@@ -697,7 +697,7 @@
   <section class="cs-section">
     <div class="read">
       <h2>Experimentation</h2>
-      <p>We did not ship this to everyone at once. The flow was tested against the dashboard-first experience, watching upgrade conversion as the primary metric and onboarding completion + time-to-first-publish as guardrails. A related monetization experiment — localized market pricing tests for India, the Philippines and Indonesia — lifted monthly purchases ~6x.</p>
+      <p>We did not ship this to everyone at once. The flow was tested against the dashboard-first experience, watching upgrade conversion as the primary metric and onboarding completion + time-to-first-publish as guardrails. A related monetization experiment, localized market pricing tests for India, the Philippines and Indonesia, lifted monthly purchases ~6x.</p>
     </div>
   </section>
 
@@ -731,7 +731,7 @@
   <section class="cs-section">
     <div class="read">
       <h2>What I learned / would do differently</h2>
-      <p>Activation is not teaching users where things are. It is making the value undeniable before asking for money. I would instrument the reveal step-by-step from day one — in the first version we knew the flow converted better before we knew which step of the reveal did the heavy lifting, and that delayed the bundling and pricing iterations that produced the biggest lifts.</p>
+      <p>Activation is not teaching users where things are. It is making the value undeniable before asking for money. I would instrument the reveal step-by-step from day one. In the first version, we knew the flow converted better before we knew which step of the reveal did the heavy lifting, and that delayed the bundling and pricing iterations that produced the biggest lifts.</p>
     </div>
   </section>
 
@@ -772,14 +772,14 @@
   <section class="cs-section">
     <div class="read">
       <h2>Problem</h2>
-      <p>Our editor was powerful and templates were designer-made, but every icon came from the Noun Project stock library — anyone could use the same icon. Users felt their logos were generic and didn't feel connected to the graphic we suggested.</p>
+      <p>Our editor was powerful and templates were designer-made, but every icon came from the Noun Project stock library, so anyone could use the same icon. Users felt their logos were generic and didn't feel connected to the graphic we suggested.</p>
       <p>At the same time, ChatGPT and Gemini can generate a "logo" in seconds. But off-the-shelf AI wasn't the answer: image models make pictures. A logo icon has to be:</p>
       <ul>
         <li><strong>Simple</strong>, and recognizable at any size</li>
         <li><strong>A clean vector</strong>, not a detailed, gradient-filled image</li>
         <li><strong>On-template</strong>, fitting the type and layout around it</li>
       </ul>
-      <p>And it has to stay professional and fully editable — which raw AI output is not: it tends to be busy, saturated, and far from basic design standards.</p>
+      <p>And it has to stay professional and fully editable, which raw AI output is not. It tends to be busy, saturated, and far from basic design standards.</p>
       <p><strong>The question: how do we give every user an original icon made for their brand, while keeping the logo professional and fully editable?</strong></p>
     </div>
   </section>
@@ -787,13 +787,13 @@
   <section class="cs-section">
     <div class="read">
       <h2>Solution: our own pipeline, not a model API pasted in</h2>
-      <p><strong>Generation + vectorization.</strong> Fast, low-cost image models generate each icon, and our proprietary system turns it into a clean SVG: removes the background, merges similar colors, keeps shapes flat and solid — so the icon can be edited like any other element in the editor.</p>
-      <p><strong>Styles made for logos.</strong> We defined 10 icon styles — from ink and brush to technical and full color — and tuned each one with our designers to look right inside our templates. A style is a constraint system: it tells the model what "a logo icon" means before it generates anything.</p>
-      <p><strong>A system around it.</strong> We updated the editor, the templates and the logo ideas page so AI icons show up everywhere. We kept Noun Project stock search too — stock still has value as coverage and fallback.</p>
+      <p><strong>Generation + vectorization.</strong> Fast, low-cost image models generate each icon, and our proprietary system turns it into a clean SVG: removes the background, merges similar colors, keeps shapes flat and solid, so the icon can be edited like any other element in the editor.</p>
+      <p><strong>Styles made for logos.</strong> We defined 10 icon styles, from ink and brush to technical and full color, and tuned each one with our designers to look right inside our templates. A style is a constraint system: it tells the model what "a logo icon" means before it generates anything.</p>
+      <p><strong>A system around it.</strong> We updated the editor, the templates and the logo ideas page so AI icons show up everywhere. We kept Noun Project stock search too, because stock still has value as coverage and fallback.</p>
       <p><strong>Two entry points:</strong></p>
       <ul>
-        <li><strong>Create your own</strong> — anywhere in the editor, describe the icon you want; the pipeline generates a set made for that request, in your brand colors, ready to edit.</li>
-        <li><strong>Made for you</strong> — we refine the brand description users give us earlier in the flow, so the logo ideas page already shows logos with icons made for them.</li>
+        <li><strong>Create your own:</strong> anywhere in the editor, describe the icon you want; the pipeline generates a set made for that request, in your brand colors, ready to edit.</li>
+        <li><strong>Made for you:</strong> we refine the brand description users give us earlier in the flow, so the logo ideas page already shows logos with icons made for them.</li>
       </ul>
     </div>
   </section>
@@ -812,13 +812,13 @@
   <section class="cs-section">
     <div class="read">
       <h2>How we evaluated quality: the icon eval</h2>
-      <p>An icon is the hardest AI output to judge: it has almost no room to hide. Our evaluation combined formal testing — we compared image models and ran multiple formal image tests with a vector-comparison tool — with criteria only a designer can set:</p>
+      <p>An icon is the hardest AI output to judge: it has almost no room to hide. Our evaluation combined formal testing (we compared image models and ran multiple formal image tests with a vector-comparison tool) with criteria only a designer can set:</p>
       <ul>
-        <li><strong>Recognizable at small sizes</strong> — if it doesn't read at favicon size, it isn't a logo icon, however pretty it looks large.</li>
-        <li><strong>Simplicity</strong> — flat shapes, limited colors, no detail that disappears or turns to noise when reduced.</li>
-        <li><strong>Vector cleanliness</strong> — after conversion, the SVG had to stay editable: clean paths, merged colors, no raster residue.</li>
-        <li><strong>Template fit</strong> — the icon had to work with the typography and layout of the template, not just look good alone.</li>
-        <li><strong>Brand relevance</strong> — generated for this business and this description, not a generic category symbol.</li>
+        <li><strong>Recognizable at small sizes:</strong> if it doesn't read at favicon size, it isn't a logo icon, however pretty it looks large.</li>
+        <li><strong>Simplicity:</strong> flat shapes, limited colors, no detail that disappears or turns to noise when reduced.</li>
+        <li><strong>Vector cleanliness:</strong> after conversion, the SVG had to stay editable, with clean paths, merged colors and no raster residue.</li>
+        <li><strong>Template fit:</strong> the icon had to work with the typography and layout of the template, not just look good alone.</li>
+        <li><strong>Brand relevance:</strong> generated for this business and this description, not a generic category symbol.</li>
       </ul>
       <p>The metric that actually governed model and prompt decisions was not cost per generation, it was <strong>cost per usable icon</strong>: a cheap model whose icons designers/users rejected is the most expensive model you can ship. That is the same cost-quality loop as the Website Builder, applied per asset.</p>
     </div>
@@ -827,16 +827,16 @@
   <section class="cs-section">
     <div class="read">
       <h2>The loop</h2>
-      <p>Generate in a defined style → vectorize to clean SVG → check against the style and template constraints → if it fails (too complex, off-style, unrecognizable small), adjust and regenerate rather than showing the user a bad set. The user sees a curated set of options, never the raw output stream — in a logo editor, showing every generation teaches users the technology is unreliable; showing a good set teaches them it is magic.</p>
+      <p>Generate in a defined style → vectorize to clean SVG → check against the style and template constraints → if it fails (too complex, off-style, unrecognizable small), adjust and regenerate rather than showing the user a bad set. The user sees a curated set of options, never the raw output stream. In a logo editor, showing every generation teaches users the technology is unreliable; showing a good set teaches them it is magic.</p>
     </div>
   </section>
 
   <section class="cs-section">
     <div class="read">
       <h2>Key decisions and trade-offs</h2>
-      <p><strong>1. Build a pipeline vs. use a frontier image model directly.</strong> A bigger model gives richer images — and richer is exactly what a logo icon must not be. We chose fast, low-cost models + our own vectorization and style system over raw output quality.</p>
+      <p><strong>1. Build a pipeline vs. use a frontier image model directly.</strong> A bigger model gives richer images, and richer is exactly what a logo icon must not be. We chose fast, low-cost models + our own vectorization and style system over raw output quality.</p>
       <p><strong>2. Keep stock icons.</strong> Replacing the library entirely would have been a cleaner story and a worse product: AI generation can fail or miss a niche concept, and a trusted fallback keeps the editor reliable. AI became the default for originality, stock stayed for coverage.</p>
-      <p><strong>3. Full color came later, deliberately.</strong> We launched with simpler styles first and added full-color icons as a later release — and that release alone lifted signups 7.9%, which told us users weren't just accepting AI icons, they were choosing the product because of them.</p>
+      <p><strong>3. Full color came later, deliberately.</strong> We launched with simpler styles first and added full-color icons as a later release, and that release alone lifted signups 7.9%, which told us users weren't just accepting AI icons, they were choosing the product because of them.</p>
     </div>
   </section>
 
@@ -855,7 +855,7 @@
         <div class="stat"><b>+10%</b><span>Signup completion when users engaged with icons</span></div>
         <div class="stat"><b>+7.9%</b><span>Signups after launching full-color AI icons</span></div>
       </div>
-      <p>Commercially: AI features turned the free editor into a paid upgrade — commercial use of the logo and its custom icon became a second key conversion point for the platform.</p>
+      <p>Commercially: AI features turned the free editor into a paid upgrade: commercial use of the logo and its custom icon became a second key conversion point for the platform.</p>
     </div>
   </section>
 
@@ -865,7 +865,7 @@
       <ul>
         <li>Too complex / busy generations → style constraints + vector simplification, not a better prompt alone.</li>
         <li>Near-duplicate icons for similar businesses would destroy the "unique" promise → the generation is conditioned on the user's specific brand description and colors, so the same prompt in a different brand context produces a different asset.</li>
-        <li>Similarity / IP risk — an AI icon must not land too close to an existing famous mark; keeping a human-designer-defined style system and template frame around generation was part of keeping output in original, generic-symbol territory rather than imitating specific logos.</li>
+        <li>Similarity / IP risk: an AI icon must not land too close to an existing famous mark; keeping a human-designer-defined style system and template frame around generation was part of keeping output in original, generic-symbol territory rather than imitating specific logos.</li>
       </ul>
     </div>
   </section>
@@ -873,7 +873,7 @@
   <section class="cs-section">
     <div class="read">
       <h2>What I learned / would do differently</h2>
-      <p>In AI products, constraints are the product. The model was the commodity; our value was the 10 styles, the vectorization, the template fit and the evaluation of what counts as a logo. I would build the small-size recognizability test into the automated pipeline from the start — in the early rounds that judgment still depended too much on a person looking at the output, which doesn't scale with generation volume.</p>
+      <p>In AI products, constraints are the product. The model was the commodity; our value was the 10 styles, the vectorization, the template fit and the evaluation of what counts as a logo. I would build the small-size recognizability test into the automated pipeline from the start. In the early rounds, that judgment still depended too much on a person looking at the output, which doesn't scale with generation volume.</p>
     </div>
   </section>
 
@@ -907,7 +907,7 @@
       <div class="glance">
         <div class="g-role">Sole PM, LOGO.com</div>
         <div><b>Users</b><span>the whole product/engineering/support team</span></div>
-        <div><b>Thesis</b><span>recurring PM work is a product problem — define what to evaluate, how to evaluate it, connect it to the tools the team already uses, and communicate results where the team already is.</span></div>
+        <div><b>Thesis</b><span>recurring PM work is a product problem: define what to evaluate, how to evaluate it, connect it to the tools the team already uses, and communicate results where the team already is.</span></div>
       </div>
     </div>
   </section>
@@ -915,7 +915,7 @@
   <section class="cs-section">
     <div class="read">
       <h2>Problem</h2>
-      <p>As the only PM, I was the team's memory. I built the reports, reviewed analytics, surfaced red flags, shared KPIs, organized sprints — every question about processes, decisions or data went through me. A big part of my time didn't go to judgment, decisions or research. It went to gathering information and documenting: recurring work that made me the bottleneck and kept the team's knowledge in one person's head.</p>
+      <p>As the only PM, I was the team's memory. I built the reports, reviewed analytics, surfaced red flags, shared KPIs, organized sprints. Every question about processes, decisions or data went through me. A big part of my time didn't go to judgment, decisions or research. It went to gathering information and documenting: recurring work that made me the bottleneck and kept the team's knowledge in one person's head.</p>
     </div>
   </section>
 
@@ -932,11 +932,11 @@
     </div>
     <div class="wide-read" style="margin-top:8px">
       <div class="steps">
-        <div class="step st-emerald" style="grid-column:1/-1"><span class="step-emoji" aria-hidden="true">🚦</span><h4>Mixpanel health report: a daily analytics agent</h4><p>I connected Claude to my Mixpanel KPI boards and gave it every factor it had to consider, so it wouldn't just read numbers but analyze what changed and how our releases affected them. Every morning it produces a report with a traffic light per main KPI, colored by criteria I defined. When a KPI is red — a sharp drop in signups, for example — it investigates, proposes a theory of what failed, and suggests next steps. If an overnight release broke something, we had a diagnosis in the first hour of the day.</p><p>The PM work here is the eval design, not the connection: defining what "red" means per KPI (threshold, comparison window, seasonality/release context) so the agent flags real anomalies instead of noise. A health agent that cries wolf loses the team in a week; the criteria — and tuning them when a flag was wrong — were the product. Every report links its evidence, because a theory without a source is just a hallucination with confidence.</p></div>
-        <div class="step st-mint"><span class="step-emoji" aria-hidden="true">📝</span><h4>AI PRDs: turning tribal knowledge into a system</h4><p>Over the years we simplified our PRD structure many times around what the team actually needed. I turned that structure into a system with Claude: anyone — support, marketing, or me — can describe a customer request, problem or idea, answer a few follow-up questions, and get a complete PRD: user stories, acceptance criteria, edge cases, ready for developers and for our AI dev bot.</p><p>The follow-up questions are the product design: a PRD system that accepts a one-line idea and returns a confident document teaches the team to skip thinking. The intake forces the requester to answer the questions a PM would ask — who is this for, what happens today, how will we know it worked — so the output is a PRD, not a formatted guess.</p></div>
+        <div class="step st-emerald" style="grid-column:1/-1"><span class="step-emoji" aria-hidden="true">🚦</span><h4>Mixpanel health report: a daily analytics agent</h4><p>I connected Claude to my Mixpanel KPI boards and gave it every factor it had to consider, so it wouldn't just read numbers but analyze what changed and how our releases affected them. Every morning it produces a report with a traffic light per main KPI, colored by criteria I defined. When a KPI is red (a sharp drop in signups, for example), it investigates, proposes a theory of what failed, and suggests next steps. If an overnight release broke something, we had a diagnosis in the first hour of the day.</p><p>The PM work here is the eval design, not the connection: defining what "red" means per KPI (threshold, comparison window, seasonality/release context) so the agent flags real anomalies instead of noise. A health agent that cries wolf loses the team in a week; the criteria, and tuning them when a flag was wrong, were the product. Every report links its evidence, because a theory without a source is just a hallucination with confidence.</p></div>
+        <div class="step st-mint"><span class="step-emoji" aria-hidden="true">📝</span><h4>AI PRDs: turning tribal knowledge into a system</h4><p>Over the years we simplified our PRD structure many times around what the team actually needed. I turned that structure into a system with Claude: anyone (support, marketing, or me) can describe a customer request, problem or idea, answer a few follow-up questions, and get a complete PRD: user stories, acceptance criteria, edge cases, ready for developers and for our AI dev bot.</p><p>The follow-up questions are the product design: a PRD system that accepts a one-line idea and returns a confident document teaches the team to skip thinking. The intake forces the requester to answer the questions a PM would ask (who is this for, what happens today, how will we know it worked), so the output is a PRD, not a formatted guess.</p></div>
         <div class="step"><span class="step-emoji" aria-hidden="true">🚀</span><h4>Sprint demos + status updates: loops on a cadence</h4><ul><li>Every two weeks, an automation with Claude and Linear builds the sprint demo doc: every feature launched, with its impact researched in Mixpanel based on the events defined in its PRD. Ready for devs to present at sprint end.</li><li>An automation reviews Slack, Notion and Linear and posts a daily/weekly digest to Slack at the start of the day: what happened, what's next, red flags. The whole team starts with the same information.</li></ul><p>Cadence is a design decision: health daily (problems compound), status daily/weekly (alignment decays fast), demos bi-weekly (tied to the sprint). Matching the loop's frequency to the cost of being late is what keeps automations useful instead of noisy.</p></div>
-        <div class="step"><span class="step-emoji" aria-hidden="true">💬</span><h4>HelpScout → product request</h4><p>When our support lead flagged a conversation in HelpScout, it automatically became a PRD ready to review — closing the loop between what users tell support and what product builds, without a manual hand-off in between.</p></div>
-        <div class="step st-pistachio"><span class="step-emoji" aria-hidden="true">🔍</span><h4>Deep-dive research on demand</h4><p>Before any project, a ready-made process produced a competitor deep dive: best practices summary and links to review — a fast starting point that reminded us not to reinvent the wheel.</p></div>
+        <div class="step"><span class="step-emoji" aria-hidden="true">💬</span><h4>HelpScout → product request</h4><p>When our support lead flagged a conversation in HelpScout, it automatically became a PRD ready to review, closing the loop between what users tell support and what product builds, without a manual hand-off in between.</p></div>
+        <div class="step st-pistachio"><span class="step-emoji" aria-hidden="true">🔍</span><h4>Deep-dive research on demand</h4><p>Before any project, a ready-made process produced a competitor deep dive: best practices summary and links to review. It was a fast starting point that reminded us not to reinvent the wheel.</p></div>
         <div class="step st-lime" style="grid-column:1/-1"><span class="step-emoji" aria-hidden="true">🎨</span><h4>Figma ↔ Claude ↔ PRD</h4><p>We created a design system document Claude used from the start, connected Claude to our Figma design system and back to Linear. From an idea, one command created the full PRD with the design attached. From a PRD, Claude produced a reviewable design; once approved, it went right back into the PRD.</p></div>
       </div>
     </div>
@@ -963,7 +963,7 @@
   <section class="cs-section">
     <div class="read">
       <h2>What I learned</h2>
-      <p>AI didn't make me a faster PM. It removed me as the bottleneck for information, which is a different thing: the team's knowledge stopped living in one person's head and started living in systems anyone could use. That is also what I now look for in any AI product — not "does the model work?", but "whose bottleneck does this remove, and who is still accountable when it's wrong?"</p>
+      <p>AI didn't make me a faster PM. It removed me as the bottleneck for information, which is a different thing: the team's knowledge stopped living in one person's head and started living in systems anyone could use. That is also what I now look for in any AI product: not "does the model work?", but "whose bottleneck does this remove, and who is still accountable when it's wrong?"</p>
     </div>
   </section>
 
