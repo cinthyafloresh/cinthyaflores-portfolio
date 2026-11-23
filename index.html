@@ -651,7 +651,7 @@
 
   <section class="cs-section">
     <div class="read">
-      <h2>Solution: the reveal, not the tour</h2>
+      <h2>Solution</h2>
       <ol>
         <li><strong>A few questions about the business:</strong> what they sell, who they are, vision, brand tone. This is also the input our AI builder needs, so the questions are not a form: they are the first step of the product working.</li>
         <li><strong>A website ready to publish</strong>, built by our AI website builder from their brand. Regenerate, edit, or publish in one click.</li>
@@ -762,13 +762,23 @@
 
   <section class="cs-section">
     <div class="read">
-      <h2>Solution: our own pipeline, not a model API pasted in</h2>
-      <p><strong>Generation + vectorization.</strong> Fast, low-cost image models generate each icon, and our proprietary system turns it into a clean SVG: removes the background, merges similar colors, keeps shapes flat and solid, so the icon can be edited like any other element in the editor.</p>
+      <h2>Solution</h2>
+      <p><strong>Our own pipeline.</strong> We built our own icon pipeline instead of pasting in a model API. Fast, low-cost image models generate each icon, and our proprietary system turns it into a clean SVG: it removes the background, merges similar colors and keeps shapes flat and solid, so the icon can be edited like any other element in the editor.</p>
       <p><strong>Styles made for logos.</strong> We defined 10 icon styles, from ink and brush to technical and full color, and tuned each one with our designers to look right inside our templates. A style is a constraint system: it tells the model what "a logo icon" means before it generates anything.</p>
-      <p><strong>A system around it.</strong> We updated the editor, the templates and the logo ideas page so AI icons show up everywhere. We kept Noun Project stock search too, because stock still has value as coverage and fallback.</p>
+      <p><strong>Choosing the model was a cost and quality balance, not a search for the fanciest output.</strong> We compared image models and ran multiple formal image tests with a vector-comparison tool, judging every model against the same criteria:</p>
+      <ul>
+        <li>Recognizable at small sizes: if it doesn't read at favicon size, it isn't a logo icon, however pretty it looks large.</li>
+        <li>Simplicity: flat shapes, limited colors, no detail that disappears or turns to noise when reduced.</li>
+        <li>Vector cleanliness: after conversion, the SVG had to stay editable, with clean paths, merged colors and no raster residue.</li>
+        <li>Template fit: the icon had to work with the typography and layout of the template, not just look good alone.</li>
+        <li>Brand relevance: generated for this business and this description, not a generic category symbol.</li>
+      </ul>
+      <p>The stronger, more complex models sometimes produced beautiful designs. But they often added more detail than a logo icon can carry, and they were expensive. That mattered because of scale: we generate thousands and thousands of icons a month, and we pay for every generation whether the user ends up using that icon or not, on top of what we had already invested in building the pipeline. So the metric that governed the choice was never cost per generation. It was cost per usable icon: a model only wins if it creates good designs, keeps the simplicity our parameters demand, and stays cheap enough to generate in mass. The models we shipped were the balance point between those three things, not simply the cheapest and not simply the most powerful.</p>
+      <p><strong>The loop, and the failures it was built to catch.</strong> Generation runs inside that same system: generate in a defined style, vectorize to a clean SVG, check the result against the style and template constraints, and if it fails, adjust and regenerate instead of showing the user a bad set. Each failure mode we had seen became a rule inside the pipeline. Too complex or busy generations are handled with style constraints and vector simplification, not with a better prompt alone. Near-duplicate icons for similar businesses would destroy the "unique" promise, so generation is conditioned on each user's specific brand description and colors: the same request in a different brand context produces a different asset. And because an AI icon must not land too close to an existing famous mark, the designer-defined style system and the template frame keep the output in original, generic-symbol territory instead of imitating specific logos. The user sees a curated set of options, never the raw output stream. In a logo editor, showing every generation teaches users the technology is unreliable. Showing a good set teaches them it is magic.</p>
+      <p><strong>A system around it.</strong> We updated the editor, the templates and the logo ideas page so AI icons show up everywhere. We kept Noun Project stock search too: stock still has value as coverage and fallback.</p>
       <p><strong>Two entry points:</strong></p>
       <ul>
-        <li><strong>Create your own:</strong> anywhere in the editor, describe the icon you want; the pipeline generates a set made for that request, in your brand colors, ready to edit.</li>
+        <li><strong>Create your own:</strong> anywhere in the editor, describe the icon you want and the pipeline generates a set made for that request, in your brand colors, ready to edit.</li>
         <li><strong>Made for you:</strong> we refine the brand description users give us earlier in the flow, so the logo ideas page already shows logos with icons made for them.</li>
       </ul>
     </div>
@@ -787,30 +797,8 @@
 
   <section class="cs-section">
     <div class="read">
-      <h2>How we evaluated quality: the icon eval</h2>
-      <p>Our evaluation combined formal testing (we compared image models and ran multiple formal image tests with a vector-comparison tool) with criteria only a designer can set:</p>
-      <ul>
-        <li><strong>Recognizable at small sizes:</strong> if it doesn't read at favicon size, it isn't a logo icon, however pretty it looks large.</li>
-        <li><strong>Simplicity:</strong> flat shapes, limited colors, no detail that disappears or turns to noise when reduced.</li>
-        <li><strong>Vector cleanliness:</strong> after conversion, the SVG had to stay editable, with clean paths, merged colors and no raster residue.</li>
-        <li><strong>Template fit:</strong> the icon had to work with the typography and layout of the template, not just look good alone.</li>
-        <li><strong>Brand relevance:</strong> generated for this business and this description, not a generic category symbol.</li>
-      </ul>
-      <p>The metric that actually governed model and prompt decisions was not cost per generation, it was <strong>cost per usable icon</strong>: a cheap model whose icons designers/users rejected is the most expensive model you can ship. That is the same cost-quality loop as the Website Builder, applied per asset.</p>
-    </div>
-  </section>
-
-  <section class="cs-section">
-    <div class="read">
-      <h2>The loop</h2>
-      <p>Generate in a defined style → vectorize to clean SVG → check against the style and template constraints → if it fails (too complex, off-style, unrecognizable small), adjust and regenerate rather than showing the user a bad set. The user sees a curated set of options, never the raw output stream. In a logo editor, showing every generation teaches users the technology is unreliable; showing a good set teaches them it is magic.</p>
-    </div>
-  </section>
-
-  <section class="cs-section">
-    <div class="read">
       <h2>Key decisions and trade-offs</h2>
-      <p><strong>1. Build a pipeline vs. use a frontier image model directly.</strong> A bigger model gives richer images, and richer is exactly what a logo icon must not be. We chose fast, low-cost models + our own vectorization and style system over raw output quality.</p>
+      <p><strong>1. Build a pipeline vs. use a frontier image model directly.</strong> The bigger models could produce richer designs, but richer often meant too much detail for a logo icon, and at thousands of generations a month the cost per usable icon did not work. We chose fast, low-cost models plus our own vectorization and style system because that combination held the balance we needed: good design, the simplicity a logo demands, and a cost that scales.</p>
       <p><strong>2. Keep stock icons.</strong> Replacing the library entirely would have been a cleaner story and a worse product: AI generation can fail or miss a niche concept, and a trusted fallback keeps the editor reliable. AI became the default for originality, stock stayed for coverage.</p>
       <p><strong>3. Full color came later, deliberately.</strong> We launched with simpler styles first and added full-color icons as a later release, and that release alone lifted signups 7.9%, which told us users weren't just accepting AI icons, they were choosing the product because of them.</p>
     </div>
