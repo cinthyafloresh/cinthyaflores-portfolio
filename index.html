@@ -541,8 +541,8 @@
       <h2>How the agent system evolved</h2>
       <p>We didn't start multi-agent. We learned our way there, through several rounds of iteration.</p>
       <h3>V1: Broad agents</h3>
-      <p>Our first pipeline had only a few agents: one extracted the brand (colors, fonts, and what the business actually does), one matched a template, and one handled content. A single assembler pulled blocks from different templates and did everything at once: layout, copy, images, and applying the brand. A Design Judge and a final judge checked the result at the end.</p>
-      <p><strong>What broke:</strong> Some agents were doing too much. The assembler was making too many different kinds of decisions in one pass, and it made poor ones. A final, generalist judge could tell us a site wasn't good enough, but it couldn't reliably tell us why, or fix the specific domain that failed. We had no expert judges for each domain, so we were evaluating everything, and therefore nothing well.</p>
+      <p>Our first pipeline had only a few agents: one extracted the brand (colors, fonts, and what the business actually does), one matched a template, and one handled content. A single assembler pulled blocks from different templates and did everything at once: layout, copy, images, and applying the brand.</p>
+      <p><strong>What broke:</strong> Some agents were doing too much. The assembler was making too many different kinds of decisions in one pass, and it made poor ones. And there was no judge to catch it. The final judge came later. Without expert evaluation for each domain, we could see that a site wasn't good enough, but we couldn't reliably tell why, or fix the specific domain that failed.</p>
       <h3>V2: Specialize the makers</h3>
       <p>We split the overloaded work into single-job agents:</p>
       <ul>
